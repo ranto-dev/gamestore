@@ -30,100 +30,101 @@ class HomePage extends StatelessWidget {
             ),
 
             Column(
-              children: [HeaderSection(), SearchSection(), CategorySection()],
+              children: [
+                HeaderSection(),
+                SearchSection(),
+                CategorySection(),
+              ],
             ),
           ],
         ),
       ),
 
-      bottomNavigationBar: NavigationBar(),
+      bottomNavigationBar: CustomeNavigationBar(),
     );
   }
 
-  Widget NavigationBar() {
-    return Container(
-      child: Container(
-        decoration: BoxDecoration(
-          boxShadow: [
-            BoxShadow(
-              color: Colors.grey.withValues(alpha: 0.2),
-              spreadRadius: 5,
-              blurRadius: 10,
-            ),
-          ],
+  // ignore: non_constant_identifier_names
+  Widget CustomeNavigationBar() => Container(
+    decoration: BoxDecoration(
+      boxShadow: [
+        BoxShadow(
+          color: Colors.grey.withValues(alpha: 0.2),
+          spreadRadius: 5,
+          blurRadius: 10,
         ),
+      ],
+    ),
 
-        child: ClipRRect(
-          borderRadius: const BorderRadius.only(
-            topLeft: Radius.circular(30),
-            topRight: Radius.circular(30),
-          ),
-          child: BottomNavigationBar(
-            type: BottomNavigationBarType.fixed,
-            items: [
-              BottomNavigationBarItem(
-                icon: Container(
-                  margin: const EdgeInsets.all(5),
-                  padding: const EdgeInsets.all(5),
-                  decoration: BoxDecoration(
-                    color: Colors.grey.withValues(alpha: 0.2),
-                    borderRadius: BorderRadius.circular(10),
-                  ),
-                  child: const Icon(Icons.home, size: 30, color: Colors.grey),
-                ),
-                label: "home",
-              ),
-
-              BottomNavigationBarItem(
-                icon: Container(
-                  margin: const EdgeInsets.all(5),
-                  padding: const EdgeInsets.all(5),
-                  decoration: BoxDecoration(
-                    color: Colors.grey.withValues(alpha: 0.2),
-                    borderRadius: BorderRadius.circular(10),
-                  ),
-                  child: const Icon(Icons.home, size: 30, color: Colors.grey),
-                ),
-                label: "Application",
-              ),
-
-              BottomNavigationBarItem(
-                icon: Container(
-                  margin: const EdgeInsets.all(5),
-                  padding: const EdgeInsets.all(5),
-                  decoration: BoxDecoration(
-                    color: Colors.grey.withValues(alpha: 0.2),
-                    borderRadius: BorderRadius.circular(10),
-                  ),
-                  child: const Icon(
-                    Icons.play_arrow_rounded,
-                    size: 30,
-                    color: Colors.grey,
-                  ),
-                ),
-                label: "Film",
-              ),
-
-              BottomNavigationBarItem(
-                icon: Container(
-                  margin: const EdgeInsets.all(5),
-                  padding: const EdgeInsets.all(5),
-                  decoration: BoxDecoration(
-                    color: Colors.grey.withValues(alpha: 0.2),
-                    borderRadius: BorderRadius.circular(10),
-                  ),
-                  child: const Icon(
-                    Icons.auto_stories_rounded,
-                    size: 30,
-                    color: Colors.grey,
-                  ),
-                ),
-                label: "Book",
-              ),
-            ],
-          ),
-        ),
+    child: ClipRRect(
+      borderRadius: const BorderRadius.only(
+        topLeft: Radius.circular(30),
+        topRight: Radius.circular(30),
       ),
-    );
-  }
+      child: BottomNavigationBar(
+        type: BottomNavigationBarType.fixed,
+        items: [
+          BottomNavigationBarItem(
+            icon: Container(
+              margin: const EdgeInsets.all(5),
+              padding: const EdgeInsets.all(5),
+              decoration: BoxDecoration(
+                color: Colors.grey.withValues(alpha: 0.2),
+                borderRadius: BorderRadius.circular(10),
+              ),
+              child: const Icon(Icons.home, size: 30, color: Colors.grey),
+            ),
+            label: "home",
+          ),
+
+          BottomNavigationBarItem(
+            icon: Container(
+              margin: const EdgeInsets.all(5),
+              padding: const EdgeInsets.all(5),
+              decoration: BoxDecoration(
+                color: Colors.grey.withValues(alpha: 0.2),
+                borderRadius: BorderRadius.circular(10),
+              ),
+              child: const Icon(Icons.home, size: 30, color: Colors.grey),
+            ),
+            label: "Application",
+          ),
+
+          BottomNavigationBarItem(
+            icon: Container(
+              margin: const EdgeInsets.all(5),
+              padding: const EdgeInsets.all(5),
+              decoration: BoxDecoration(
+                color: Colors.grey.withValues(alpha: 0.2),
+                borderRadius: BorderRadius.circular(10),
+              ),
+              child: const Icon(
+                Icons.play_arrow_rounded,
+                size: 30,
+                color: Colors.grey,
+              ),
+            ),
+            label: "Film",
+          ),
+
+          BottomNavigationBarItem(
+            icon: Container(
+              margin: const EdgeInsets.all(5),
+              padding: const EdgeInsets.all(5),
+              decoration: BoxDecoration(
+                color: Colors.grey.withValues(alpha: 0.2),
+                borderRadius: BorderRadius.circular(10),
+              ),
+              child: const Icon(
+                Icons.auto_stories_rounded,
+                size: 30,
+                color: Colors.grey,
+              ),
+            ),
+            label: "Book",
+          ),
+        ],
+      ),
+    ),
+  );
 }

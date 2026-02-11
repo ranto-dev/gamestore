@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:gamestore/pages/home/widgets/newest.dart';
+import 'package:gamestore/pages/home/widgets/popular.dart';
 
 class CategorySection extends StatelessWidget {
   CategorySection({super.key});
@@ -30,7 +32,7 @@ class CategorySection extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       height: 500,
-      padding: const EdgeInsets.only(top: 20, left: 10, right: 10),
+      padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 20),
       decoration: BoxDecoration(
         color: Colors.white,
         borderRadius: BorderRadius.only(
@@ -39,9 +41,10 @@ class CategorySection extends StatelessWidget {
         ),
       ),
       child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           SizedBox(
-            height: 140,
+            height: 110,
             child: ListView.separated(
               scrollDirection: Axis.horizontal,
               itemBuilder: ((context, index) => Column(
@@ -55,7 +58,7 @@ class CategorySection extends StatelessWidget {
                     child: Icon(
                       categories[index]['icon'] as IconData,
                       color: Colors.white,
-                      size: 40,
+                      size: 30,
                     ),
                   ),
                   const SizedBox(height: 10),
@@ -73,6 +76,17 @@ class CategorySection extends StatelessWidget {
               itemCount: categories.length,
             ),
           ),
+          const Text(
+            'Popular game',
+            style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20),
+          ),
+          PopularGame(),
+          const SizedBox(height: 10),
+          Text(
+            'Newest game',
+            style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20),
+          ),
+          NewestGame(),
         ],
       ),
     );
